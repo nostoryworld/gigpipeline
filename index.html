@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GigPipeline — your money pipeline</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="brand">⚡ GigPipeline</div>
+  <div class="pipeline-value">
+    <span class="label">Pipeline value</span>
+    <span class="amount" id="pipelineValue">$0</span>
+  </div>
+  <button id="addBtn" class="add-btn">+ Add gig</button>
+</header>
+
+<main id="board" class="board"></main>
+
+<footer>
+  <span id="ratesNote"></span>
+  <button id="resetBtn" class="link-btn">Reset demo data</button>
+</footer>
+
+<div id="modalOverlay" class="modal-overlay hidden">
+  <div class="modal">
+    <h2 id="modalTitle">Add gig</h2>
+    <label>Title<input id="fTitle" type="text" placeholder="e.g. Research brief — DeFi protocol"></label>
+    <div class="row">
+      <label>Platform
+        <select id="fPlatform">
+          <option value="ugig">ugig</option>
+          <option value="termix">TermiX</option>
+          <option value="superteam">Superteam</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <label>Stage
+        <select id="fStage">
+          <option value="applied">Applied</option>
+          <option value="messaged">Messaged</option>
+          <option value="trial">Trial</option>
+          <option value="submitted">Submitted</option>
+          <option value="paid">Paid/Won</option>
+          <option value="dead">Dead</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <label>Bid<input id="fBid" type="number" min="0" step="any" placeholder="50"></label>
+      <label>Currency
+        <select id="fCurrency">
+          <option value="USD">USD</option>
+          <option value="USDC">USDC</option>
+          <option value="AUD">AUD</option>
+          <option value="SOL">SOL</option>
+        </select>
+      </label>
+    </div>
+    <label>Deadline<input id="fDeadline" type="date"></label>
+    <label>Notes<textarea id="fNotes" rows="2" placeholder="Buyer, link, anything…"></textarea></label>
+    <div class="modal-actions">
+      <button id="deleteBtn" class="danger hidden">Delete</button>
+      <span class="spacer"></span>
+      <button id="cancelBtn" class="secondary">Cancel</button>
+      <button id="saveBtn" class="primary">Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
